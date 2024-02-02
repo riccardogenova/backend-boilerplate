@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import express, { Request, Response } from 'express';
 
 const app = express();
@@ -14,5 +15,5 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server run: localhost:${PORT}`);
+  console.log(chalk.bold.green(`Server run on http://localhost:${PORT}`));
 });

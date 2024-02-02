@@ -3,8 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = __importDefault(require("fs"));
-fs_1.default.writeFileSync('example.txt', 'TEST');
+const chalk_1 = __importDefault(require("chalk"));
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const PORT = 3000;
@@ -16,5 +15,5 @@ app.get('/api', (req, res) => {
     res.json({ message: "Benvenuto nell'API!" });
 });
 app.listen(PORT, () => {
-    console.log(`Server run: localhost:${PORT}`);
+    console.log(chalk_1.default.bold.green(`Server run on http://localhost:${PORT}`));
 });
