@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import express, { Request, Response } from 'express';
 
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 app.use(express.json());
 
@@ -11,9 +11,11 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/api', (req: Request, res: Response) => {
-  res.json({ message: "Benvenuto nell'API!" });
+  res.json({ message: 'Welcome to Back End boilerplate!' });
 });
 
 app.listen(PORT, () => {
   console.log(chalk.bold.green(`Server run on http://localhost:${PORT}`));
 });
+
+console.log(process.argv[2])
